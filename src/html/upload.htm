@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>上传照片</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="../../reset.css" type="text/css">
+        <link rel="stylesheet" href="../css/upload-common.css" type="text/css">
+        <link media="(max-width:1320px) and (min-width:1120px)" rel="stylesheet" href="../css/upload-middle.css" type="text/css">
+        <link media="(max-width:1120px) and (min-width:600px)" rel="stylesheet" href="../css/upload-small.css" type="text/css">
+        <link media="(max-width:600px)" rel="stylesheet" href="../css/upload-mobile.css" type="text/css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../../index.html" class="navigation" name="index">首页</a>
+                <a href="browser.htm" class="navigation" name="browser">浏览页</a>
+                <a href="search.htm" class="navigation" name="search">搜索页</a>
+                <div class="dropdown">
+                    <a class="dropbt">个人中心
+                        <img class="list" src="../../img/others/list.png" width="20px" height="20px" >
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="upload.htm">
+                            <img class="manu" src="../../img/others/upload.png" width="25px" height="25px" >上传
+                        </a>
+                        <a href="mypic.htm">
+                            <img class="manu" src="../../img/others/mypic.png" width="25px" height="25px">我的照片
+                        </a>
+                        <a href="favorates.htm">
+                            <img class="manu" src="../../img/others/favorate.png" width="25px" height="25px">我的收藏
+                        </a>
+                        <a href="signin.htm">
+                            <img class="manu" src="../../img/others/login.png" width="25px" height="25px" >登入
+                        </a> 
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <h1>随时随地，上传你喜爱的照片</h1>
+            <h2>上传的照片将被保存至“我的照片”</h2>
+            <table>
+                <tr>
+                    <td class="td1">
+                        <!--用button与类型为file的input重叠，达到给input设计样式的效果-->
+                        <button class="upld">
+                            <img class="upld" src="../../img/others/upload2.png">
+                            上传
+                        </button>
+                        <input type="file" id="file" class="filepath"  onchange="changepic(this)" accept="image/jpg,image/jpeg,image/png,image/PNG"><br>
+                        <!--上传前先用默认图片显示-->
+                        <div class="pic"><img src="../../img/others/mypic1.png" id="uploadimg" class="before" ></div>
+                    </td>
+                    <td>
+                        <p class="things">
+                            <span class="things">图片标题：</span>
+                            <input type="text" class="things" placeholder="巴黎圣母院">
+                        </p>
+                        <p class="things" >
+                            <span class="things" name="description">图片描述：</span>
+                            <!--因为普通input不能换行所以采用textarea-->
+                            <textarea id="description" placeholder="巴黎圣母院大教堂是一座位于塞纳河畔，法国巴黎市中心的哥特式基督教教堂建筑。它的地位、历史价值无与伦比，是历史上最为辉煌的建筑之一"></textarea>
+                        </p>
+                        <p class="things">
+                            <span class="things">拍摄国家：</span>
+                            <input type="text" class="things" placeholder="法国">
+                        </p>
+                        <p class="things">
+                            <span class="things">拍摄城市：</span>
+                            <input type="text" class="things" placeholder="巴黎">
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit"  class="submit" value="提交" onclick="alert('上传成功');window.location.href='mypic.htm';">
+        </main>
+        <footer>
+            文明办网 文明上网 举报、纠纷处理及不良内容举报电话：110 | 举报邮箱：19302010036@fudan.com
+        </footer>
+        <!--上传照片，改变类名，上传的图片有边框-->
+        <script>
+            function changepic() {
+                var reads = new FileReader();
+                f = document.getElementById('file').files[0];
+                reads.readAsDataURL(f);
+                reads.onload = function(e) {
+                document.getElementById('uploadimg').src = this.result;
+                document.getElementById('uploadimg').className="after";
+                };
+                }
+        </script>
+    </body>    

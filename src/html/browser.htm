@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>浏览页</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="../../reset.css" type="text/css">
+        <link rel="stylesheet" href="../css/browser-common.css" type="text/css">
+        <link media="(max-width:1360px) and (min-width:600px)" rel="stylesheet" href="../css/browser-middle.css" type="text/css">
+        <link media="(max-width:1280px) and (min-width:600px)" rel="stylesheet" href="../css/browser-small.css" type="text/css">
+        <link media="(max-width:600px)" rel="stylesheet" href="../css/browser-mobile.css" type="text/css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../../index.html" class="navigation" name="index">首页</a>
+                <a href="browser.htm" class="navigation" name="browser">浏览页</a>
+                <a href="search.htm" class="navigation" name="search">搜索页</a>
+                <div class="dropdown">
+                    <a class="dropbt">个人中心
+                        <img class="list" src="../../img/others/list.png" width="20px" height="20px" >
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="upload.htm">
+                            <img class="manu" src="../../img/others/upload.png" width="25px" height="25px" >上传
+                        </a>
+                        <a href="mypic.htm">
+                            <img class="manu" src="../../img/others/mypic.png" width="25px" height="25px">我的照片
+                        </a>
+                        <a href="favorates.htm">
+                            <img class="manu" src="../../img/others/favorate.png" width="25px" height="25px">我的收藏
+                        </a>
+                        <a href="signin.htm">
+                            <img class="manu" src="../../img/others/login.png" width="25px" height="25px" >登入
+                        </a> 
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!--此为侧边栏展开图标，仅在移动端显示，移动端影藏侧边栏，点击图标打开-->
+        <img src="../../img/others/open.png" class="open">
+        <aside>
+            <ul class="aside">
+                <li class="search">
+                    <p><img src="../../img/others/disc.png" name="disc1">图片标题浏览</p>
+                    <input type="text" class="title" placeholder="search 89903 pics" autofocus>
+                    <input type="submit" value="" class="search" onclick="alert('搜索完毕，找到77个结果')">
+                </li>
+                <hr>
+                <li>
+                    <p><img src="../../img/others/disc.png" name="disc2">热门国家快速浏览</p>
+                    <a href="" onclick="alert('已为您找到中国的图片')">中国</a>
+                    <a href="" onclick="alert('已为您找到意大利的图片')">意大利</a><br>
+                    <a href="" onclick="alert('已为您找到法国的图片')">法国</a>
+                    <a href="" onclick="alert('已为您找到英国的图片')">英国</a>
+                </li>
+                <hr>
+                <li>
+                    <p><img src="../../img/others/disc.png" name="disc3">热门城市快速浏览</p>
+                    <a href="" onclick="alert('已为您找到巴黎的图片')">巴黎</a>
+                    <a href="" onclick="alert('已为您找到佛罗伦萨的图片')">佛罗伦萨</a><br>
+                    <a href="" onclick="alert('已为您找到威尼斯的图片')">威尼斯</a>
+                    <a href="" onclick="alert('已为您找到伊斯坦布尔的图片')">伊斯坦布尔</a><br>
+                    <a href="" onclick="alert('已为您找到上海的图片')">上海</a>
+                </li>
+            </ul>
+        </aside>
+        <main>
+            <section>
+                <select id="topic" class="filter">
+                    <option>现代都市</option>
+                    <option>文化遗产</option>
+                    <option>优美风景</option>
+                </select>
+                <select id="country" class="filter">
+                    <option selected value="">请选择</option>
+                    <option value="china">中国</option>
+                    <option value="france">法国</option>
+                    <option value="england">英国</option>
+                    <option value="italy">意大利</option>
+                    <option value="spain">西班牙</option>
+                </select>
+                <select id="city" class="filter"></select>
+                <!--实现二级选择器效果-->
+                <script type="text/javascript">
+                    var select = document.getElementById("country");
+                        select.onchange=function(){
+                        var selvalue = select.value;
+                        var val = document.getElementById("city");
+                        switch(selvalue){
+                            case "china" : val.innerHTML="<option>上海</option><option>北京</option><option>重庆</option>";break;
+                            case "france" : val.innerHTML="<option>巴黎</option><option>马赛</option><option>波尔多</option>";break;
+                            case "england" : val.innerHTML="<option>伦敦</option><option>利物浦</option><option>格拉斯哥</option>";break;
+                            case "italy" :val.innerHTML="<option>罗马</option><option>威尼斯</option><option>佛罗伦萨</option>";break;
+                            case "spain" :val.innerHTML="<option>马德里</option><option>塞维利亚</option><option>格拉纳达</option>";break;
+                            case "":val.innerHTML="<option>请选择国家</option>";break;
+                            default : alert("erro");
+                        }
+                    };
+                </script>
+                <button class="filter" onclick="alert('已为您筛选出77个结果')">筛选</button>
+                <p id="tip">以下为浏览结果</p>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/222222.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/222223.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5855174537.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5855191275.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5855209453.jpg" class="pic" onclick="window.location.href='details.htm'"></pic>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5855213165.jpg" class="pic" onclick="window.location.href='details.htm'"></pic>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5855221959.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5855729828.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5855735700.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5855752464.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5855774224.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5856616479.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5856654945.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5856658791.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5856697109.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5857298322.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/5857398054.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/6114850721.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/6114859969.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/6114867983.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/6114881215.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/6114904363.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/6114907897.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                        <td>
+                            <div class="pic"><img src="../../img/normal/medium/6114960821.jpg" class="pic" onclick="window.location.href='details.htm'"></div>
+                        </td>
+                    </tr>
+                </table>
+                <!--页码-->
+                <div id="page">
+                    <a href="" class="page">&lt</a>
+                    <a href="" class="pagenum">1</a>
+                    <a href="" class="pagenum">2</a>
+                    <a href="" class="pagenum">3</a>
+                    <a href="" class="pagenum">4</a>
+                    <a href="" class="page">&gt</a>
+                </div>
+                <p><br></p>
+            </section>
+        </main>
+        <footer>
+            文明办网 文明上网 举报、纠纷处理及不良内容举报电话：110 | 举报邮箱：19302010036@fudan.com
+        </footer>
+    </body>
+</html>

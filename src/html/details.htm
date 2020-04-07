@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>图片详情</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="../../reset.css" type="text/css">
+        <link rel="stylesheet" href="../css/details-common.css" type="text/css">
+        <link media="(max-width:1320px) and (min-width:1120px)" rel="stylesheet" href="../css/details-middle.css" type="text/css">
+        <link media="(max-width:1120px) and (min-width:600px)" rel="stylesheet" href="../css/details-small.css" type="text/css">
+        <link media="(max-width:600px)" rel="stylesheet" href="../css/details-mobile.css" type="text/css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../../index.html" class="navigation" name="index">首页</a>
+                <a href="browser.htm" class="navigation" name="browser">浏览页</a>
+                <a href="search.htm" class="navigation" name="search">搜索页</a>
+                <div class="dropdown">
+                    <a class="dropbt">个人中心
+                        <img class="list" src="../../img/others/list.png" width="20px" height="20px" >
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="upload.htm">
+                            <img class="manu" src="../../img/others/upload.png" width="25px" height="25px" >上传
+                        </a>
+                        <a href="mypic.htm">
+                            <img class="manu" src="../../img/others/mypic.png" width="25px" height="25px">我的照片
+                        </a>
+                        <a href="favorates.htm">
+                            <img class="manu" src="../../img/others/favorate.png" width="25px" height="25px">我的收藏
+                        </a>
+                        <a href="signin.htm">
+                            <img class="manu" src="../../img/others/login.png" width="25px" height="25px" >登入
+                        </a> 
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <h1>圣母百花大教堂</h1>
+            <h2>收藏数：<span>777</span></h2>
+            <!--收藏按钮-->
+            <button class="favor" onclick="alert('图片已收藏')">
+                <img src="../../img/others/favorate2.png" class="favor" >收藏
+            </button>
+            <hr>
+            <table class="table1">
+                <!--使用表格样式布局 ,左边图片右边信息-->
+                <tr>
+                    <td>
+                        <div class="picture">
+                            <img src="../../img/normal/medium/9498358806.jpg" class="picture">
+                        </div>
+                    </td>
+                    <td name="infor">
+                        <table class="table2">
+                            <tr>
+                                <td>拍摄者:</td>
+                                <td>Ezio Auditore</td>
+                            </tr>
+                            <tr>
+                                <td>主题:</td>
+                                <td>文艺复兴</td>
+                            </tr>
+                            <tr>
+                                <td>拍摄国家:</td>
+                                <td>意大利</td>
+                            </tr>
+                            <tr>
+                                <td>拍摄城市:</td>
+                                <td>佛罗伦萨</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--下方是描述，描述第一个字变大-->
+            <p id="description">花之圣母大教堂（Basilica di Santa Maria del Fiore），又名圣母百花大教堂，佛罗伦萨大教堂。是世界五大教堂之一。教堂位于意大利佛罗伦萨历史中心城区，教堂建筑群由大
+                教堂、钟塔与洗礼堂构成。这座使用白、红、绿三色花岗岩贴面的美丽教堂将文艺复兴时代所推崇的古典、优雅、自由诠释得淋漓尽致，难怪会被命名为“花之圣母”。花之圣母教堂原
+                址是建于4世纪的圣·雷帕拉塔教堂。1296年，科西莫·迪·乔凡尼·德·美第奇出资建造新的教堂，花了175年时间才最终建成。天才建筑师布鲁涅内斯基仿造罗马万神殿设计的教堂圆顶
+                ，是古典艺术与当时科学的完美结合，连教皇也惊叹为“神话一般”，一位音乐家专门为它作了一首协奏曲。
+            </p>
+            <hr>
+            <p><br><br><br><br><br><br><br><br></p>
+        </main>
+        <footer>
+            文明办网 文明上网 举报、纠纷处理及不良内容举报电话：110 | 举报邮箱：19302010036@fudan.com
+        </footer>
+    </body>
+</html>
